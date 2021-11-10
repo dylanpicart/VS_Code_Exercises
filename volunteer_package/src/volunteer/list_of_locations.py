@@ -1,6 +1,5 @@
-from volunteer_info import Volunteer
-
-class Location(Volunteer):
+import random as rd
+class Location():
     def __init__(self, name):
         self.name = name
         self.choice = None
@@ -90,6 +89,20 @@ class Location(Volunteer):
                 print(f"Highland Park is located at {address}")
             else:
                 print(f'Sorry, we could not find this location.\n Please check your spelling and try again.')
+                
+        
+    def random_location(self):
+        if self.choice == '1':
+            keys = list(self.fd_locations.keys())
+            print(rd.choice(keys))
+        elif self.choice == '2':
+            keys = list(self.hos_locations.keys())
+            print(rd.choice(keys))
+        elif self.choice == '3':
+            keys = list(self.cg_locations.keys())
+            print(rd.choice(keys))
+        else:
+            print(f'Invalid input. Please try again.')
       
       
 b = Location('Dylan')
